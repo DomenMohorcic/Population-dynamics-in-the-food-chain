@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1589195561 "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/ekosistem.tex" "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/ekosistem.pdf" "ekosistem" 1589195562
+["pdflatex"] 1589195913 "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/reports/ecosystem.tex" "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/reports/ecosystem.pdf" "ecosystem" 1589195914
   "C:/Users/dmoho/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1587914256 10518601 9e5971af07f597f09df2c49dbe066c19 ""
   "C:/Users/dmoho/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1587915294 83751 6e4565e2a96ca36e797cc3ed7d4e67f8 ""
   "C:/Users/dmoho/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -63,15 +63,15 @@
   "C:/Users/dmoho/AppData/Local/Programs/MiKTeX 2.9/tex/latex/refcount/refcount.sty" 1576437552 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/dmoho/AppData/Local/Programs/MiKTeX 2.9/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1575574882 9715 b051d5b493d9fe5f4bc251462d039e5f ""
   "C:/Users/dmoho/AppData/Local/Programs/MiKTeX 2.9/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/ekosistem.aux" 1589195562 725 8c849f7f1ff12290af377bac600e959b ""
-  "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/ekosistem.tex" 1589195561 315 31cef7936f052b4bd061988c1eeedf7e ""
-  "ekosistem.aux" 1589195562 725 8c849f7f1ff12290af377bac600e959b "pdflatex"
-  "ekosistem.out" 1589195562 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "ekosistem.tex" 1589195561 315 31cef7936f052b4bd061988c1eeedf7e ""
+  "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/reports/ecosystem.aux" 1589195914 725 8c849f7f1ff12290af377bac600e959b ""
+  "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/reports/ecosystem.tex" 1589195912 315 31cef7936f052b4bd061988c1eeedf7e ""
+  "ecosystem.aux" 1589195914 725 8c849f7f1ff12290af377bac600e959b "pdflatex"
+  "ecosystem.out" 1589195914 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "ecosystem.tex" 1589195912 315 31cef7936f052b4bd061988c1eeedf7e ""
   (generated)
-  "ekosistem.aux"
-  "ekosistem.out"
-  "ekosistem.pdf"
-  "ekosistem.log"
-  "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/ekosistem.pdf"
-  "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/ekosistem.log"
+  "ecosystem.pdf"
+  "ecosystem.log"
+  "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/reports/ecosystem.pdf"
+  "c:/Users/dmoho/Documents/FRI/2_letnik_2_semester/MM/Projekt/reports/ecosystem.log"
+  "ecosystem.out"
+  "ecosystem.aux"

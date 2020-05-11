@@ -1,7 +1,7 @@
-PWD c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt
+PWD c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports
 INPUT C:\Users\dmoho\AppData\Local\MiKTeX\2.9\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.tex
-OUTPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.log
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.tex
+OUTPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.log
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size12.clo
@@ -88,23 +88,23 @@ INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\uniquecounter
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\uniquecounter\uniquecounter.sty
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdfmode.def
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\l3backend\l3backend-pdfmode.def
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.aux
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.aux
-OUTPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.aux
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.aux
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.aux
+OUTPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.aux
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.sty
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.sty
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\refcount\refcount.sty
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\refcount\refcount.sty
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\gettitlestring\gettitlestring.sty
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\generic\gettitlestring\gettitlestring.sty
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.out
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.out
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.out
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.out
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.out
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.out
-OUTPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.out
-OUTPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.pdf
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.out
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.out
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.out
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.out
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.out
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.out
+OUTPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.out
+OUTPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.pdf
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmmi12.tfm
@@ -122,9 +122,9 @@ INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\amsfonts
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\dmoho\AppData\Local\MiKTeX\2.9\pdftex\config\pdftex.map
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.aux
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.out
-INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\ekosistem.out
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.aux
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.out
+INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\reports\ecosystem.out
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmr17.pfb
