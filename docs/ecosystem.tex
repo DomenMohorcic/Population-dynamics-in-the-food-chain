@@ -5,6 +5,9 @@
 \usepackage{amssymb}
 \usepackage{listings}
 \usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
 
 \begin{document}
 \title{Population dynamics in a food chain}
@@ -12,7 +15,24 @@
 \maketitle
 
 \section{Problem}
-
+Modelirali bomo dinamiko populacij različnih vrst, odnosi med vrstami pa so predstavljeni
+na naslednji sliki: \\
+\begin{center}
+	\begin{tikzpicture}
+		\tikzset{edge/.style = {->,> = latex'}}
+		\node (A) {$ x_{1} $};
+		\node[below left=of A] (B) {$ x_{2} $};
+		\node[below right=of A] (C) {$ x_{3} $};
+		\node[below=of B] (D) {$ x_{4} $};
+		\node[below=of C] (E) {$ x_{5} $};
+		\node[below right=of D] (F) {$ x_{6} $};
+		\draw[edge] (A) edge (B) edge (C);
+		\draw[edge] (B) edge (D);
+		\draw[edge] (C) edge (D) edge (E);
+		\draw[edge] (D) edge (F);
+		\draw[edge] (E) edge (F);
+	\end{tikzpicture}
+\end{center}
 
 \section{Naloga}
 
