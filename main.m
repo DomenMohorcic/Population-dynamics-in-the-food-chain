@@ -25,7 +25,8 @@ A(6, 5) = -5;
 
 A = A .* 0.001
 
-%x = -A\b
-%%x = [8; 28; 122; 117; 13; 172];
+%x = -A\b %za iskanje stacionarne resitve
+
+%x = [8; 28; 122; 117; 13; 172];
 x = [74; 28; 12; 157; 11; 178];
 simulatePopulation(x, b, A, 1000);
