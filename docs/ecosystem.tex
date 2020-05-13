@@ -5,6 +5,9 @@
 \usepackage{amssymb}
 \usepackage{listings}
 \usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
 
 \begin{document}
 \title{Population dynamics in a food chain}
@@ -12,9 +15,37 @@
 \maketitle
 
 \section{Problem}
+Modelirali bomo dinamiko populacij različnih vrst, odnosi med vrstami pa so predstavljeni
+na naslednji sliki: \\
+\begin{center}
+	\begin{tikzpicture}
+		\tikzset{edge/.style = {->,> = latex'}}
+		\node (A) {Plenilec C ($ x_{1} $)};
+		\node[below left=of A] (B) {Plenilec A ($ x_{2} $)};
+		\node[below right=of A] (C) {Plenilec B ($ x_{3} $)};
+		\node[below=of B] (D) {Rastlinojed A ($ x_{4} $)};
+		\node[below=of C] (E) {Rastlinojed B ($ x_{5} $)};
+		\node[below right=of D] (F) {Rastline ($ x_{6} $)};
+		\draw[edge] (A) edge (B) edge (C);
+		\draw[edge] (B) edge (D);
+		\draw[edge] (C) edge (D) edge (E);
+		\draw[edge] (D) edge (F);
+		\draw[edge] (E) edge (F);
+	\end{tikzpicture}
+\end{center}
+Puščice označujejo smer prehranjevanja (npr. Plenilec A se prehranjuje z Rastlinojedom A).
+Z $ x_{i} $ označimo velikost posamezne populacije. Sprememba velikosti posamezne populacije
+je tako odvisna od naravnega prirastka/smrtnosti, smrtnosti zaradi ulova in prirastka zaradi
+prehranjevanja. Ulov in prehranjevanje sta odvisna od velikosti ustreznih drugih populacij,
+naravni prirastek/smrtnost pa je odvisna samo od velikosti populacije. Dinamiko $ i $-te
+populacije lahko opišemo tako:
+\begin{equation}
+	\dot x_{i} = x_{i}\cdot b_{i} + \sum_{i \not = j} a_{ij}\cdot x_{i}\cdot x_{j}
+\end{equation}
+kjer je $ x_{i} $ velikost $ i $-te populacije, $ b_{i} $ je koeficient naravnega prirastka/smrtnosti,
+$ a_{ij}\cdot x_{i}\cdot x_{j} $ pa je sprememba $ i $-te populacije glede na interakcijo z $ j $-to populacijo.
 
-
-\section{Naloga}
+\section{Reševanje}
 
 \subsection{Naloga 1}
 Sistem diferencialnih enačb za naš primer je naslednji:
@@ -50,8 +81,8 @@ Sistem diferencialnih enačb pa bomo zapisali v vektor $ \dot X $:
 		x_{6}\cdot(b_{6}+a_{64}\cdot x_{4}+a_{65}\cdot x_{5}) \\
 	\end{bmatrix}
 \end{equation}
-V vektorju $ b = \left[b_{1}, b_{2}, b_{3}, b_{4}, b_{5}, b_{6}\right]^{T} $ so koeficienti naravnega prirastka, ki je za rastline ($ x_{6} $) pozitiven,
-za vse ostale pa negativen. \\
+V vektorju $ b = \left[b_{1}, b_{2}, b_{3}, b_{4}, b_{5}, b_{6}\right]^{T} $ so koeficienti naravnega prirastka/smrtnosti,
+ki je za rastline ($ x_{6} $) pozitiven, za vse ostale pa negativen. \\
 Sistem enačb za dani primer lahko tako zapišemo kot
 \begin{equation}
 	\dot X = X*(b+A\cdot X)
