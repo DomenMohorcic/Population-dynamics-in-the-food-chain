@@ -42,6 +42,7 @@ A(6, 5) = -5;
 
 A = A .* 0.001
 
-x = -A\b
-
-simulatePopulation(x, b, A)
+%x = -A\b
+%%x = [8; 28; 122; 117; 13; 172];
+x = [74; 28; 12; 157; 11; 178];
+simulatePopulation(x, b, A, 1000);
