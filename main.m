@@ -7,6 +7,7 @@ b6 = 0.3;
 b = [b1; b2; b3; b4; b5; b6]
 
 A = zeros(6, 6);
+% napisemo raje v matriki ...
 A(1, 2) = 0.5;
 A(1, 3) = 0.7;
 A(2, 4) = 1;
@@ -25,8 +26,13 @@ A(6, 5) = -5;
 
 A = A .* 0.001
 
-%x = -A\b %za iskanje stacionarne resitve
+x = -A\b %za iskanje stacionarne resitve
+% daje gibanje bliz ustacionarne tocke ... ciklicno obnasanje
+% dodamo se JG(x0), da dobimo matriko B, ki nam bo povedala kaj se dogaja okoli teh tock preko lastnih vrednosti! 
+x = x + randn(6, 1) * 2
 
 %x = [8; 28; 122; 117; 13; 172];
-x = [74; 28; 12; 157; 11; 178];
-simulatePopulation(x, b, A, 1000);
+% x = [74; 28; 12; 157; 11; 178];
+
+
+simulatePopulation(x, b, A, 10000);
