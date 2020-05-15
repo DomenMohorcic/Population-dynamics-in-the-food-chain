@@ -12,6 +12,7 @@ function retval = simulatePopulation (x0, b, A, n)
   end
   
   %%Plot
+  figure(1)
   hold on
   for i = (1:6)
     vektor = zeros(1, n);
@@ -20,7 +21,14 @@ function retval = simulatePopulation (x0, b, A, n)
   endfor
   hold off
   
-  x
+  for i = (1 : 5)
+    figure(i + 1)
+    plot(tocke(6, :), tocke(i, :));
+    % colormap(jet);
+  endfor
+  
+  lastX = x  
+  
 endfunction
 
 %%Korak rk4
