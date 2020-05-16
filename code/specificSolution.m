@@ -31,8 +31,8 @@ function RES = specificSolution(coefA, coefB, realVal)
     r = abs(r) * coefB;
   
     % save b and A
-    M{i} = R .* A;
-    m{i} = r .* b;
+    M{i} = round((R .* A) * 10000000) / 10000000;
+    m{i} = round((r .* b) * 10000000) / 10000000;
     
     % get matrix B and the real part of its eigenvalues
     x0 = -M{i}\m{i};
@@ -95,8 +95,9 @@ function RES = specificSolution(coefA, coefB, realVal)
       r = abs(r);
       
       % save b and A
-      N{i} = R .* A;
-      n{i} = r .* b;
+
+      N{i} = round((R .* A) * 10000000) / 10000000;
+      n{i} = round((r .* b) * 10000000) / 10000000;
       
       % get matrix B and the real part of its eigenvalues
       x0 = -N{i}\n{i};

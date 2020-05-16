@@ -38,7 +38,7 @@ A = zeros(6, 6);
 ## res = generateMatrix(10000, 0, 0.001, 0.05);
 % realVal = [-30; -10; -35; -30; -30; -30];
 realVal = [0; 0; 0; 0; 0; 0];
-res = specificSolution(0.01, 0.5, realVal);
+res = specificSolution(0.001, 0.05, realVal);
 
 for i = (1 : 6)
   A(:, i) = res(:, i);
