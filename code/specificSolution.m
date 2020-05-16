@@ -59,21 +59,21 @@ function RES = specificSolution(coefA, coefB, realVal)
   bT = m{1};
   AT = M{1};
   
-  for g = 1 : 1000
+  for g = 1 : 100
     v;
     [num, idx] = min(v);
     if (bestNum > num)
-      bestNum = num
+      bestNum = num;
       BEST = M{idx};
       best = m{idx};
-      x0 = -BEST\best
-      rv = real(eigValuesB(x0, b, A))
+      x0 = -BEST\best;
+      rv = real(eigValuesB(x0, best, BEST));
     endif
     
     for i = 1 : 100
       if (mod(i, 10) == 1)
-        [best, index] = min(v);
-        if (best == 1000000)
+        [minimum, index] = min(v);
+        if (minimum == 1000000)
           bT = best;
           AT = BEST;
         endif
@@ -126,7 +126,7 @@ endfunction
 
 function res = writeReturn(b, A) 
   res = zeros(6, 7);
-  for i = (1 : 6) 
+  for i = (1 : 6)
     res(:, i) = A(:, i);
   endfor
   res(:, 7) = b;
