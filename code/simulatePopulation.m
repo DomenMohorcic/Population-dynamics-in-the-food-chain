@@ -21,11 +21,11 @@ function retval = simulatePopulation (x0, b, A, n, fig)
   endfor
   hold off
   
-##  for i = (1 : 5)
-##    figure(i + 1)
-##    plot(tocke(6, :), tocke(i, :));
-##    % colormap(jet);
-##  endfor
+  %for i = (1 : 5)
+    %figure(2)
+    %plot(tocke(2, :), tocke(3, :));
+    % colormap(jet);
+  %endfor
   
   lastX = x  
   
