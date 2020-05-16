@@ -245,7 +245,80 @@ za sistem pa po 10000 iteracijah dobimo naslednjo naslednjo sliko:\\
 \end{center}
 Ciklično obnašanje smo opisali v poglavju Naloga 4.\\
 Obnašanje sistema pa je odvisno od lastnih vrednosti jakobijeve matrike sistema
-v stacionarni točki. Lastne vrednosti so kompleksne, od njihovega realnega dela pa
+v stacionarni točki. Jakobijeva matrika je enaka:
+\begin{equation}
+	J_{x_{1}} =
+	\begin{bmatrix}
+		b_{1}+2x_{1}a_{11}+x_{2}a_{12}+x_{3}a_{13}+x_{4}a_{14}+x_{5}a_{15}+x_{6}a_{16} \\
+		x_{2}a_{21} \\
+		x_{3}a_{31} \\
+		x_{4}a_{41} \\
+		x_{5}a_{51} \\
+		x_{6}a_{61} \\
+	\end{bmatrix}
+\end{equation}
+\begin{equation}
+	J_{x_{2}} =
+	\begin{bmatrix}
+		x_{1}a_{12} \\
+		b_{2}+x_{1}a_{21}+2x_{2}a_{22}+x_{3}a_{23}+x_{4}a_{24}+x_{5}a_{25}+x_{6}a_{26} \\
+		x_{3}a_{32} \\
+		x_{4}a_{42} \\
+		x_{5}a_{52} \\
+		x_{6}a_{62} \\
+	\end{bmatrix}
+\end{equation}
+\begin{equation}
+	J_{x_{3}} =
+	\begin{bmatrix}
+		x_{1}a_{13} \\
+		x_{2}a_{23} \\
+		b_{3}+x_{1}a_{31}+x_{2}a_{32}+2x_{3}a_{33}+x_{4}a_{34}+x_{5}a_{35}+x_{6}a_{36} \\
+		x_{4}a_{43} \\
+		x_{5}a_{53} \\
+		x_{6}a_{63} \\
+	\end{bmatrix}
+\end{equation}
+\begin{equation}
+	J_{x_{4}} =
+	\begin{bmatrix}
+		x_{1}a_{14} \\
+		x_{2}a_{24} \\
+		x_{3}a_{34} \\
+		b_{4}+x_{1}a_{41}+x_{2}a_{42}+x_{3}a_{43}+2x_{4}a_{44}+x_{5}a_{45}+x_{6}a_{46} \\
+		x_{5}a_{54} \\
+		x_{6}a_{64} \\
+	\end{bmatrix}
+\end{equation}
+\begin{equation}
+	J_{x_{5}} =
+	\begin{bmatrix}
+		x_{1}a_{15} \\
+		x_{2}a_{25} \\
+		x_{3}a_{35} \\
+		x_{4}a_{45} \\
+		b_{5}+x_{1}a_{51}+x_{2}a_{52}+x_{3}a_{53}+x_{4}a_{54}+2x_{5}a_{55}+x_{6}a_{56} \\
+		x_{6}a_{65} \\
+	\end{bmatrix}
+\end{equation}
+\begin{equation}
+	J_{x_{6}} =
+	\begin{bmatrix}
+		x_{1}a_{16} \\
+		x_{2}a_{26} \\
+		x_{3}a_{36} \\
+		x_{4}a_{46} \\
+		x_{5}a_{56} \\
+		b_{6}+x_{1}a_{61}+x_{2}a_{62}+x_{3}a_{63}+x_{4}a_{64}+x_{5}a_{65}+2x_{6}a_{66} \\
+	\end{bmatrix}
+\end{equation}
+\begin{equation}
+	JF =
+	\begin{bmatrix}
+		J_{x_{1}} & J_{x_{2}} & J_{x_{3}} & J_{x_{4}} & J_{x_{5}} & J_{x_{6}} \\
+	\end{bmatrix}
+\end{equation}
+Lastne vrednosti so kompleksne, od njihovega realnega dela pa
 je odvisno obnašanje sistema. Če je realni del manjši od nič, je stacionarna točka
 spiralni liak, če pa je pozitivna, je spiralni izvor.
 
