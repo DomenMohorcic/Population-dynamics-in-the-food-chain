@@ -121,14 +121,94 @@ in
 \subsection{Naloga 2}
 Stacionarna rešitev sistema je, ko je vektor $ \dot X $ enak  $ 0 $. To pomeni, da je
 $ X*(b+A\cdot X) = 0 $. Vektor $ X = 0 $ že zadosti našemu pogoju, vendar iščemo neničelno
-rešitev. Za naša $ A $ in $ b $ je to $ X = \left[8.7, 28.7, 122.3, 117.4, 13.0, 172.3\right]^{T} $
+rešitev. Za naša $ A $ in $ b $ je to $ X = \left[8.7, 28.7, 122.3, 117.4, 13.0, 172.3\right]^{T} $.
+Slika rešitve po 100 iteracijah izgleda tako:\\
+\begin{center}
+	\includegraphics{stationary.png}
+\end{center}
 
 \subsection{Naloga 3}
 Napisali smo funcijo {\sf simulatePopulation.m}, ki za vhod vzame matriko $ A $, vektor $ b $ in začetne
 velikosti populacij v vektorju $ X $.
 
 \subsection{Naloga 4}
+Naredili smo simulacijo za začetne pogoje, ki se malo razlikujejo od $ X $. Dobili smo
+$ X_{nov} = \left[9.0, 32.6, 125.9, 121.0, 16.5, 175.4\right]^{T} $, slika simulacije po 5000 iteracijah
+pa izleda tako:\\
+\begin{center}
+	\includegraphics{stationary_almost.png}
+\end{center}
 
 \subsection{Naloga 5}
+Preučili smo obnašanje sistema za različne vrednosti koeficientov in začetnih pogojev in našli
+ciklično, asimptotično ciklično obnašanje in kaos.\\
+Asimptotično ciklično obnašanje smo dobili z naslednjimi začetnimi vrednostmi:\\
+$ A =
+\begin{bmatrix}
+	0 & 0.0041790 & 0.0014199 & 0 & 0 & 0 \\
+	-0.0010902 & 0 & 0 & 0.0038366 & 0 & 0 \\
+	-0.0019610 & 0 & 0 & 0.0031243 & 0.0038874 & 0 \\
+	0 & -0.0022909 & 0.0029800 & 0 & 0 & 0.0053580 \\
+	0 & 0 & -0.0032865 & 0 & 0 & 0.0059388 \\
+	0 & 0 & 0 & -0.0028531 & -0.0031236 & 0 \\
+\end{bmatrix} $, 
+$ b =
+\begin{bmatrix}
+	-0.0824046 \\
+	-0.0059820 \\
+	-0.0192474 \\
+	-0.0311698 \\
+	-0.0448382 \\
+	0.0549130 \\
+\end{bmatrix} $ in
+$ X =
+\begin{bmatrix}
+	23.2438 \\
+	17.8982 \\
+	5.2910 \\
+	8.1907 \\
+	10.0353 \\
+	10.4537 \\
+\end{bmatrix} $. \\
+Vektor $ X $ se od stacionarne rešitve sistema razlikuje samo za $ 0.11196 $. Slika simulacije
+sistema s takimi podatki pa je naslednja:
+\begin{center}
+	\includegraphics{asimptotic_cyclic.png}
+\end{center}
+
+Kaos pa smo dobili z naslednjimi koeficienti:\\
+$ A =
+\begin{bmatrix}
+	0 & 0.0005993 & 0.0018995 & 0 & 0 & 0 \\
+	-0.0010021 & 0 & 0 & 0.0007798 & 0 & 0 \\
+	-0.0016327 & 0 & 0 & 0.0003364 & 0.0002603 & 0 \\
+	0 & -0.0001513 & 0.0008657 & 0 & 0 & 0.0007994 \\
+	0 & 0 & -0.0024918 & 0 & 0 & 0.0025529 \\
+	0 & 0 & 0 & -0.0009197 & -0.0003923 & 0 \\
+\end{bmatrix} $, 
+$ b =
+\begin{bmatrix}
+	-0.0394982 \\
+	-0.0159140 \\
+	-0.0042202 \\
+	-0.0326592 \\
+	-0.0235321 \\
+	0.0275829 \\
+\end{bmatrix} $ in
+$ X =
+\begin{bmatrix}
+	3.4576 \\
+	13.4956 \\
+	14.4207 \\
+	25.7688 \\
+	9.5432 \\
+	21.9396 \\
+\end{bmatrix} $. \\
+Vektor $ X $ se od stacionarne rešitve razlikuje za $ 4.1805 $,
+za sistem pa po 5000 iteracijah dobimo naslednjo naslednjo sliko:\\
+\begin{center}
+	\includegraphics{caos.png}
+\end{center}
+Ciklično obnašanje smo opisali v poglavju Naloga 4.
 
 \end{document}
