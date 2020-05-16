@@ -130,6 +130,40 @@ Slika rešitve po 100 iteracijah izgleda tako:\\
 \subsection{Naloga 3}
 Napisali smo funcijo {\sf simulatePopulation.m}, ki za vhod vzame matriko $ A $, vektor $ b $ in začetne
 velikosti populacij v vektorju $ X $.
+\begin{lstlisting}[language=Octave]
+function retval = simulatePopulation (x0, b, A, n, fig)
+    F = @(X, b, A) X.*(b+A*X);%enacba prirastka za vsako vrsto
+    h = 0.1;%dolzina koraka
+
+    tocke = zeros(6, n);
+    x = x0;
+
+    %%Simulacija
+    for i = (1:n)
+        x = x + rk4Step(F, x, h, b, A);
+        tocke(:, i) = x;
+    end
+
+    figure(fig)
+    hold on
+    for i = (1:6)
+        vektor = zeros(1, n);
+        vektor(1, :) = tocke(i, :);
+        plot(vektor);
+    endfor
+
+    lastX = x  
+endfunction
+  
+%%Korak rk4
+function val = rk4Step(f, x0, h, b, A)
+    k1=feval(f, x0, b, A);
+    k2=feval(f, x0 + k1*h/2, b, A);
+    k3=feval(f, x0 + k2*h/2, b, A);
+    k4=feval(f, x0 + k3*h, b, A);
+    val = h*(k1+2*k2+2*k3+k4)/6;
+endfunction
+\end{lstlisting}
 
 \subsection{Naloga 4}
 Naredili smo simulacijo za začetne pogoje, ki se malo razlikujejo od $ X $. Dobili smo
@@ -205,10 +239,14 @@ $ X =
 	21.9396 \\
 \end{bmatrix} $. \\
 Vektor $ X $ se od stacionarne rešitve razlikuje za $ 4.1805 $,
-za sistem pa po 5000 iteracijah dobimo naslednjo naslednjo sliko:\\
+za sistem pa po 10000 iteracijah dobimo naslednjo naslednjo sliko:\\
 \begin{center}
 	\includegraphics{caos.png}
 \end{center}
-Ciklično obnašanje smo opisali v poglavju Naloga 4.
+Ciklično obnašanje smo opisali v poglavju Naloga 4.\\
+Obnašanje sistema pa je odvisno od lastnih vrednosti jakobijeve matrike sistema
+v stacionarni točki. Lastne vrednosti so kompleksne, od njihovega realnega dela pa
+je odvisno obnašanje sistema. Če je realni del manjši od nič, je stacionarna točka
+spiralni liak, če pa je pozitivna, je spiralni izvor.
 
 \end{document}
