@@ -263,6 +263,11 @@ INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\docs\stationar
 INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\docs\stationary.png
 INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\docs\stationary.png
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmss12.tfm
+INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\jknappen\ec\tcrm1200.tfm
+INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\tfm\public\cm\cmti12.tfm
 INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\docs\stationary_almost.png
 INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\docs\stationary_almost.png
 INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\docs\stationary_almost.png
@@ -281,6 +286,8 @@ INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\docs\caos.png
 INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\docs\ecosystem.aux
 INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\docs\ecosystem.out
 INPUT c:\Users\dmoho\Documents\FRI\2_letnik_2_semester\MM\Projekt\docs\ecosystem.out
+INPUT C:\Users\dmoho\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
+INPUT C:\Users\dmoho\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmex10.pfb
@@ -301,3 +308,5 @@ INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfon
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmti12.pfb
+INPUT C:\Users\dmoho\AppData\Local\Programs\MiKTeX 2.9\fonts\type1\public\amsfonts\cm\cmti12.pfb
