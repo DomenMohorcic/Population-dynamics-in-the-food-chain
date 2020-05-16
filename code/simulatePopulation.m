@@ -1,4 +1,4 @@
-function retval = simulatePopulation (x0, b, A, n)
+function retval = simulatePopulation (x0, b, A, n, fig)
   F = @(X, b, A) X.*(b+A*X);%enacba prirastka za vsako vrsto
   h = 0.1;%dolzina koraka
   
@@ -12,7 +12,7 @@ function retval = simulatePopulation (x0, b, A, n)
   end
   
   %%Plot
-  figure(1)
+  figure(fig)
   hold on
   for i = (1:6)
     vektor = zeros(1, n);

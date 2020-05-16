@@ -36,8 +36,8 @@ A = zeros(6, 6);
 ##A = A .* 0.001
 
 ## res = generateMatrix(10000, 0, 0.001, 0.05);
-% realVal = [-30; -10; -35; -30; -30; -30];
-realVal = [0; 0; 0; 0; 0; 0];
+realVal = [-3; -1; -3; -3; -3; -3];
+% realVal = [0; 0; 0; 0; 0; 0];
 res = specificSolution(0.001, 0.05, realVal);
 
 for i = (1 : 6)
@@ -49,14 +49,19 @@ A
 b
 
 x0 = -A\b %za iskanje stacionarne resitve
-% simulatePopulation(x0, b, A, 10000);
+#simulatePopulation(x0, b, A, 10000);
 % daje gibanje bliz ustacionarne tocke ... ciklicno obnasanje
 % dodamo se JG(x0), da dobimo matriko B, ki nam bo povedala kaj se dogaja okoli teh tock preko lastnih vrednosti! 
-x = x0 + randn(6, 1) * 2;
+x = x0 + randn(6, 1) * min(x0)*0.2;
 
 ev = real(eigValuesB(x0, b, A))
 %x = [8; 28; 122; 117; 13; 172];
 % x = [74; 28; 12; 157; 11; 178];
 
 % simulate population and plot it
-simulatePopulation(x, b, A, 10000);
+simulatePopulation(x, b, A, 10000, 1);
+
+##for i = (2 : 10)
+##  x = x0 + randn(6, 1) * min(x0) * i * 0.1;
+##  simulatePopulation(x, b, A, 10000, i);
+##endfor

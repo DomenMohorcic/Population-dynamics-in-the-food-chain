@@ -59,7 +59,7 @@ function RES = specificSolution(coefA, coefB, realVal)
   bT = m{1};
   AT = M{1};
   
-  for g = 1 : 100
+  for g = 1 : 200
     v;
     [num, idx] = min(v);
     if (bestNum > num)
@@ -95,7 +95,7 @@ function RES = specificSolution(coefA, coefB, realVal)
       r = abs(r);
       
       % save b and A
-
+      
       N{i} = round((R .* A) * 10000000) / 10000000;
       n{i} = round((r .* b) * 10000000) / 10000000;
       
