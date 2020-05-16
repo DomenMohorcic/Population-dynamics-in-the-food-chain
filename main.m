@@ -35,7 +35,11 @@ A = zeros(6, 6);
 
 ##A = A .* 0.001
 
-res = generateMatrix(10000, 0, 0.001, 0.05);
+## res = generateMatrix(10000, 0, 0.001, 0.05);
+realVal = [-30; -10; -35; -30; -30; -30]
+realVal = [0; 0; 0; 0; 0; 0]
+res = specificSolution(0.001, 0.05, realVal);
+
 for i = (1 : 6)
   A(:, i) = res(:, i);
 endfor
@@ -54,4 +58,5 @@ ev = real(eigValuesB(x0, b, A))
 %x = [8; 28; 122; 117; 13; 172];
 % x = [74; 28; 12; 157; 11; 178];
 
+% simulate population and plot it
 simulatePopulation(x, b, A, 10000);
