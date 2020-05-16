@@ -104,7 +104,31 @@ Koeficient $ a_{ij} $ predstavlja interakcijo vrste $ i $ in $ j $. Pozitivna vr
 $ i $ prehranjuje z vrsto $ j $, negativna pa ravno nasprotno. Vrsta s sabo nima take interakcije, zato
 so elemeniti $ a_{i=j} = 0 $. Koeficienta $ a_{ij} $ in $ a_{ji} $ nista nujno nasprotna, saj lahko plenilska
 vrsta poje več plena, kot pa ima koristi od tega. \\
-Za začetek smo določili $ X = \left[\right]^{T} $,
-$ b = \left[-0.2, -0.1, -0.1, -0.05, -0.05, 0.3\right]^{T} $ in $ A = ... $
+Za začetek smo določili $ b = \left[-0.1, -0.1, -0.1, -0.05, -0.05, 0.3\right]^{T} $
+in 
+\begin{equation}
+	A = 
+	\begin{bmatrix}
+		0 & 0.5 & 0.7 & 0 & 0 & 0 \\
+		-2 & 0 & 0 & 1 & 0 & 0 \\
+		-8 & 0 & 0 & 1 & 4 & 0 \\
+		0 & -6 & -1 & 0 & 0 & 2 \\
+		0 & 0 & -1 & 0 & 0 & 1 \\
+		0 & 0 & 0 & -2 & -5 & 0 \\
+	\end{bmatrix}\cdot 0.001
+\end{equation}
+
+\subsection{Naloga 2}
+Stacionarna rešitev sistema je, ko je vektor $ \dot X $ enak  $ 0 $. To pomeni, da je
+$ X*(b+A\cdot X) = 0 $. Vektor $ X = 0 $ že zadosti našemu pogoju, vendar iščemo neničelno
+rešitev. Za naša $ A $ in $ b $ je to $ X = \left[8.7, 28.7, 122.3, 117.4, 13.0, 172.3\right]^{T} $
+
+\subsection{Naloga 3}
+Napisali smo funcijo {\sf simulatePopulation.m}, ki za vhod vzame matriko $ A $, vektor $ b $ in začetne
+velikosti populacij v vektorju $ X $.
+
+\subsection{Naloga 4}
+
+\subsection{Naloga 5}
 
 \end{document}
