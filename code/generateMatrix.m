@@ -42,8 +42,8 @@ function res = generateMatrix(n, w, coefA, coefB)
   best = logical(round(c / 6));
   %A = M(best){1};
   %b = m(best){1};
-  A = M{index};
-  b = m{index};
+  A = M{index + 1};
+  b = m{index + 1};
   
   res = zeros(6, 7);
   for i = (1 : 6) 

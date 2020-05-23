@@ -23,12 +23,12 @@ function RES = specificSolution(coefA, coefB, realVal)
   
   for i = (1 : 100)
     % random matrix A
-    R = randn(6, 6) * 2;
-    R = abs(R) * coefA;
+    R = randn(6, 6) * 2 * coefA;
+    R = abs(R);
     
     % random vector b
-    r = randn(6, 1) * 2;
-    r = abs(r) * coefB;
+    r = randn(6, 1) * 2 * coefB;
+    r = abs(r);
   
     % save b and A
     M{i} = round((R .* A) * 10000000) / 10000000;

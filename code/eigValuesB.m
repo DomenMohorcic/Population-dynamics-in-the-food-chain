@@ -8,5 +8,5 @@ function EV = eigValuesB(x0, b, A)
     ev(i) = N(i, i);
   end
   
-  EV = ev;  
+  EV = ev;
 endfunction
