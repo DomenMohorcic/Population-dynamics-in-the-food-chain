@@ -1,11 +1,11 @@
 function RES = specificSolution(coefA, coefB, realVal)
     A = [ 
-        0, 1, 1, 0, 0, 0;
-        -1, 0, 0, 1, 0, 0;
-        -1, 0, 0, 1, 1, 0;
-        0, -1, 1, 0, 0, 1;
-        0, 0, -1, 0, 0, 1;
-        0, 0, 0, -1, -1, 0;
+         0,  1,  1,  0,  0,  0;
+        -1,  0,  0,  1,  0,  0;
+        -1,  0,  0,  1,  1,  0;
+         0, -1, -1,  0,  0,  1;
+         0,  0, -1,  0,  0,  1;
+         0,  0,  0, -1, -1,  0;
       ];
       
   b = [ -1; -1; -1; -1; -1; 1];
@@ -59,7 +59,7 @@ function RES = specificSolution(coefA, coefB, realVal)
   bT = m{1};
   AT = M{1};
   
-  for g = 1 : 200
+  for g = 1 : 100
     v;
     [num, idx] = min(v);
     if (bestNum > num)
