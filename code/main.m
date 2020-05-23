@@ -45,7 +45,7 @@ A = A .* 0.001;
 ##endfor
 ##b = res(:, 7);
 
-[x0, b, A] = generateSystem(10, 2);
+[x0, b, A] = generateSystem(0.3, 0.0421);
 
 x0
 % x0 = -A\b %za iskanje stacionarne resitve
@@ -54,14 +54,16 @@ x0
 % dodamo se JG(x0), da dobimo matriko B, ki nam bo povedala kaj se dogaja okoli teh tock preko lastnih vrednosti! 
 %x = x0 + randn(6, 1) * min(x0)*0.2;
 
-x = x0 + randn(6, 1)
+x = x0 + randn(6, 1) * 0.01
 
 eigenval = eigValuesB(x0, b, A)
 %x = [8; 28; 122; 117; 13; 172];
 % x = [74; 28; 12; 157; 11; 178];
 
 % simulate population and plot it
-simulatePopulation(x, b, A, 1000, 1);
+population = simulatePopulation(x, b, A, 10000, 1);
+
+
 
 ##for i = (2 : 10)
 ##  x = x0 + randn(6, 1) * min(x0) * i * 0.1;

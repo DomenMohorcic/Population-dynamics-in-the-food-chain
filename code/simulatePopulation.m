@@ -1,4 +1,4 @@
-function retval = simulatePopulation (x0, b, A, n, fig)
+function population = simulatePopulation (x0, b, A, n, fig)
   F = @(X, b, A) X.*(b+A*X);%enacba prirastka za vsako vrsto
   h = 0.1;%dolzina koraka
   
@@ -21,12 +21,7 @@ function retval = simulatePopulation (x0, b, A, n, fig)
   endfor
   hold off
   
-  %for i = (1 : 5)
-    %figure(2)
-    %plot(tocke(2, :), tocke(3, :));
-    % colormap(jet);
-  %endfor
-  
+  population = tocke;
   lastX = x  
   
 endfunction
