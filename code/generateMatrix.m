@@ -4,7 +4,7 @@
 %    -1 --> negative numbers for the real part of eigenvalues
 %     2 --> caos (hopefully)
 
-function res = generateMatrix(n, w, coefA, coefB)
+function [b, A] = generateMatrix(n)
   
   A = [ 
         0, 1, 1, 0, 0, 0;
@@ -84,3 +84,4 @@ function print(b, A)
   x0 = -A\b
   real(eigValuesB(x0, b, A))
 endfunction
+

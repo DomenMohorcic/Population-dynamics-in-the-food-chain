@@ -1,6 +1,6 @@
-function EV = eigValuesB(x0, b, A)
+function EV = eigValuesB(x, b, A)
   % interpretiramo se dogajanje okoli stacionarne tocke z matriko B in njenimi lastnimi vrednostmi
-  B = jacobian(x0, b, A);
+  B = jacobian(x, b, A);
   [V, N] = eig(B);
   % get eigenvalues
   ev = zeros(6, 1);

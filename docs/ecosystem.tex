@@ -16,7 +16,7 @@
 
 \section{Problem}
 Modelirali bomo dinamiko populacij različnih vrst, odnosi med vrstami pa so predstavljeni
-na naslednji sliki: \\
+z naslednjim grafom: \\
 \begin{center}
 	\begin{tikzpicture}
 		\tikzset{edge/.style = {->,> = latex'}}
@@ -35,8 +35,8 @@ na naslednji sliki: \\
 \end{center}
 Puščice označujejo smer prehranjevanja (npr. Plenilec A se prehranjuje z Rastlinojedom A).
 Z $ x_{i} $ označimo velikost posamezne populacije. Sprememba velikosti posamezne populacije
-je tako odvisna od naravnega prirastka/smrtnosti, smrtnosti zaradi ulova in prirastka zaradi
-prehranjevanja. Ulov in prehranjevanje sta odvisna od velikosti ustreznih drugih populacij,
+je tako odvisna od naravnega prirastka/smrtnosti ($ b_{i} $), smrtnosti zaradi ulova in prirastka zaradi
+prehranjevanja z drugo vrsto ($ a_{ij} $). Ulov in prehranjevanje sta odvisna od velikosti ustreznih drugih populacij,
 naravni prirastek/smrtnost pa je odvisna samo od velikosti populacije. Dinamiko $ i $-te
 populacije lahko opišemo tako:
 \begin{equation}
@@ -58,8 +58,8 @@ Sistem diferencialnih enačb za naš primer je naslednji:
 	&\dot x_{6} = x_{6}\cdot(b_{6}+a_{64}\cdot x_{4}+a_{65}\cdot x_{5}) \\
 \end{align*}
 $ x_{i} $ predstavlja velikost i-te populacije, $ \dot x_{i} $ pa predstavlja spremembo
-i-te populacije v odvisnosti od velikosti ostalih populacij. Velikosti posameznih vrst
-bomo zapisali v vektor $ X = \left[x_{1}, x_{2}, x_{3}, x_{4}, x_{5}, x_{6}\right]^{T} $.
+i-te populacije v nekem trenutku. Velikosti posameznih vrst bomo zapisali v
+vektor $ X = \left[x_{1}, x_{2}, x_{3}, x_{4}, x_{5}, x_{6}\right]^{T} $.
 Sistem diferencialnih enačb pa bomo zapisali v vektor $ \dot X $:
 \begin{equation}
 	\dot X =
@@ -100,9 +100,9 @@ kjer matrika $ A $ vsebuje koeficiente hranjenja in plenjenja $ a_{ij} $:
 		0 & 0 & 0 & a_{64} & a_{65} & 0 \\
 	\end{bmatrix}
 \end{equation}
-Koeficient $ a_{ij} $ predstavlja interakcijo vrste $ i $ in $ j $. Pozitivna vrednost pomeni, da se vrsta
-$ i $ prehranjuje z vrsto $ j $, negativna pa ravno nasprotno. Vrsta s sabo nima take interakcije, zato
-so elemeniti $ a_{i=j} = 0 $. Koeficienta $ a_{ij} $ in $ a_{ji} $ nista nujno nasprotna, saj lahko plenilska
+Koeficient $ a_{ij} $ predstavlja interakcijo vrste $ i $ z vrsto $ j $. Pozitivna vrednost pomeni, da se vrsta
+$ i $ prehranjuje z vrsto $ j $, negativna pa, da je vrsta $ i $ plen vrste $ j $. Vrsta s sabo nima take interakcije, zato
+so elemeniti, kjer je $ i=j $, enaki $ a_{ij} = 0 $. Koeficienta $ a_{ij} $ in $ a_{ji} $ pa si nista nujno nasprotna, saj lahko plenilska
 vrsta poje več plena, kot pa ima koristi od tega. \\
 Za začetek smo določili $ b = \left[-0.1, -0.1, -0.1, -0.05, -0.05, 0.3\right]^{T} $
 in 
@@ -128,12 +128,12 @@ Slika rešitve po 100 iteracijah izgleda tako:\\
 \end{center}
 
 \subsection{Naloga 3}
-Napisali smo funcijo {\sf simulatePopulation.m}, ki za vhod vzame matriko $ A $, vektor $ b $ in začetne
-velikosti populacij v vektorju $ X $.
+Napisali smo funcijo {\sf simulatePopulation.m}, ki za vhod vzame matriko interakcij $ A $,
+vektor naravnih prirastkov $ b $ in začetne velikosti populacij v vektorju $ X $.
 \begin{lstlisting}[language=Octave]
 function retval = simulatePopulation (x0, b, A, n, fig)
-    F = @(X, b, A) X.*(b+A*X);%enacba prirastka za vsako vrsto
-    h = 0.1;%dolzina koraka
+    F = @(X, b, A) X.*(b+A*X); %enacba prirastka za vsako vrsto
+    h = 0.1; %dolzina koraka
 
     tocke = zeros(6, n);
     x = x0;
@@ -145,14 +145,14 @@ function retval = simulatePopulation (x0, b, A, n, fig)
     end
 
     figure(fig)
-    hold on
+    hold on;
     for i = (1:6)
         vektor = zeros(1, n);
         vektor(1, :) = tocke(i, :);
         plot(vektor);
     endfor
 
-    lastX = x  
+    lastX = x;
 endfunction
   
 %%Korak rk4
@@ -172,6 +172,7 @@ pa izleda tako:\\
 \begin{center}
 	\includegraphics{stationary_almost.png}
 \end{center}
+Sistem se za naše vrednosti ($ A, b $ in $ X_{nov} $) obnaša ciklično.
 
 \subsection{Naloga 5}
 Preučili smo obnašanje sistema za različne vrednosti koeficientov in začetnih pogojev in našli
@@ -318,8 +319,9 @@ v stacionarni točki. Jakobijeva matrika je enaka:
 		J_{x_{1}} & J_{x_{2}} & J_{x_{3}} & J_{x_{4}} & J_{x_{5}} & J_{x_{6}} \\
 	\end{bmatrix}
 \end{equation}
-Lastne vrednosti so kompleksne, od njihovega realnega dela pa
+Lastne vrednosti jacobijeve matrike v stacionarni točki so kompleksne. Imaginarni del skrbi za ciklično obnašanje, od njihovega realnega dela pa
 je odvisno obnašanje sistema. Če je realni del manjši od nič, je stacionarna točka
-spiralni liak, če pa je pozitivna, je spiralni izvor.
+spiralni lijak, če pa je pozitivna, je spiralni izvor. Če so realni deli enaki nič,
+
 
 \end{document}

@@ -16,7 +16,7 @@ function val = jacobian(x, b, A)
       endif
     end 
   end
-  
+
   % val
 
 ##  val = zeros(6, 6)

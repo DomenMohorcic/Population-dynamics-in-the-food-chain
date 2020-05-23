@@ -45,17 +45,18 @@ A = A .* 0.001;
 ##endfor
 ##b = res(:, 7);
 
-A
-b
+[x0, b, A] = generateSystem(0.1);
 
-x0 = -A\b %za iskanje stacionarne resitve
+x0
+% x0 = -A\b %za iskanje stacionarne resitve
 #simulatePopulation(x0, b, A, 10000);
 % daje gibanje bliz ustacionarne tocke ... ciklicno obnasanje
 % dodamo se JG(x0), da dobimo matriko B, ki nam bo povedala kaj se dogaja okoli teh tock preko lastnih vrednosti! 
 %x = x0 + randn(6, 1) * min(x0)*0.2;
-x = x0 + randn(6, 1)
 
-eigenval = real(eigValuesB(x0, b, A))
+x = x0 + randn(6, 1) * 2
+
+eigenval = eigValuesB(x0, b, A)
 %x = [8; 28; 122; 117; 13; 172];
 % x = [74; 28; 12; 157; 11; 178];
 
