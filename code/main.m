@@ -57,7 +57,7 @@ x0
 % dodamo se JG(x0), da dobimo matriko B, ki nam bo povedala kaj se dogaja okoli teh tock preko lastnih vrednosti! 
 %x = x0 + randn(6, 1) * min(x0)*0.2;
 
-x = x0 + randn(6, 1) * 0.01
+x = x0 + randn(6, 1)
 
 eigenval = eigValuesB(x0, b, A)
 %x = [8; 28; 122; 117; 13; 172];

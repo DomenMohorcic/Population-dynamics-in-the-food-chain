@@ -177,7 +177,7 @@ Sistem se za naše vrednosti ($ A, b $ in $ X_{nov} $) obnaša ciklično.
 \subsection{Naloga 5}
 Preučili smo obnašanje sistema za različne vrednosti koeficientov in začetnih pogojev
 in našli ciklično obnašanje, asimptotično ciklično obnašanje in kaos.\\
-\\
+
 Asimptotično ciklično obnašanje, kjer imamo spiralni lijak, smo dobili z naslednjimi začetnimi vrednostmi:\\
 $ A =
 \begin{bmatrix}
@@ -211,6 +211,7 @@ sistema s takimi podatki pa je naslednja:
 \begin{center}
 	\includegraphics{asimptotic_cyclic_sink.png}
 \end{center}
+
 Asimptotično ciklično obnašanje s spiralnim izvorom pa smo dobili z naslednjimi
 začetnimi vrednostmi:\\
 $ A =
@@ -245,40 +246,74 @@ sistema izgleda tako:
 \begin{center}
 	\includegraphics{asimptotic_cyclic_source.png}
 \end{center}
-Kaos pa smo dobili z naslednjimi koeficienti:\\
+
+Kaos smo dobili z naslednjimi koeficienti:\\
 $ A =
 \begin{bmatrix}
-	0 & 0.0005993 & 0.0018995 & 0 & 0 & 0 \\
-	-0.0010021 & 0 & 0 & 0.0007798 & 0 & 0 \\
-	-0.0016327 & 0 & 0 & 0.0003364 & 0.0002603 & 0 \\
-	0 & -0.0001513 & 0.0008657 & 0 & 0 & 0.0007994 \\
-	0 & 0 & -0.0024918 & 0 & 0 & 0.0025529 \\
-	0 & 0 & 0 & -0.0009197 & -0.0003923 & 0 \\
+	0 & 0.024710 & 0.024893 & 0 & 0 & 0 \\
+	-0.003471 & 0 & 0 & 0.024640 & 0 & 0 \\
+	-0.027545 & 0 & 0 & 0.036172 & 0.027497 & 0 \\
+	0 & -0.034815 & -0.004165 & 0 & 0 & 0.028781 \\
+	0 & 0 & -0.029746 & 0 & 0 & 0.018492 \\
+	0 & 0 & 0 & -0.014320 & -0.039922 & 0 \\
 \end{bmatrix} $, 
 $ b =
 \begin{bmatrix}
-	-0.0394982 \\
-	-0.0159140 \\
-	-0.0042202 \\
-	-0.0326592 \\
-	-0.0235321 \\
-	0.0275829 \\
+	-0.245517 \\
+	-0.094402 \\
+	-0.114666 \\
+	-0.113336 \\
+	-0.150582 \\
+	0.235885 \\
 \end{bmatrix} $ in
 $ X =
 \begin{bmatrix}
-	3.4576 \\
-	13.4956 \\
-	14.4207 \\
-	25.7688 \\
-	9.5432 \\
-	21.9396 \\
+	7.2023 \\
+	7.9662 \\
+	1.7152 \\
+	4.6668 \\
+	4.4584 \\
+	12.1101 \\
 \end{bmatrix} $. \\
-Vektor $ X $ se od stacionarne rešitve razlikuje za $ 4.1805 $,
+Vektor $ X $ se od stacionarne rešitve razlikuje za $ 1.9694 $,
 za sistem pa po 10000 iteracijah dobimo naslednjo naslednjo sliko:\\
 \begin{center}
 	\includegraphics{caos.png}
 \end{center}
-Ciklično obnašanje smo opisali v poglavju Naloga 4.\\
+
+Ciklično obnašanje smo našli z naslednjimi koeficienti:\\
+$ A =
+\begin{bmatrix}
+	0 & 0.021620 & 0.037477 & 0 & 0 & 0 \\
+	-0.011555 & 0 & 0 & 0.026287 & 0 & 0 \\
+	-0.026978 & 0 & 0 & 0.012645 & 0.027949 & 0 \\
+	0 & -0.030686 & -0.019335 & 0 & 0 & 0.041368 \\
+	0 & 0 & -0.033011 & 0 & 0 & 0.030491 \\
+	0 & 0 & 0 & -0.000749 & -0.012079 & 0 \\
+\end{bmatrix} $, 
+$ b =
+\begin{bmatrix}
+	-0.2454399 \\
+	-0.2962493 \\
+	-0.1088634 \\
+	-0.0064447 \\
+	-0.1757772 \\
+	0.2704713 \\
+\end{bmatrix} $ in
+$ X =
+\begin{bmatrix}
+	28.8557 \\
+	8.7814 \\
+	1.4681 \\
+	23.9553 \\
+	20.9203 \\
+	7.3815 \\
+\end{bmatrix} $. \\
+Vektor $ X $ se od stacionarne rešitve razlikuje za $ 0.025147 $, slika simulacije pa je naslednja:
+\begin{center}
+	\includegraphics{cycle.png}
+\end{center}
+
 Obnašanje sistema pa je odvisno od lastnih vrednosti jakobijeve matrike sistema
 v stacionarni točki. Jakobijeva matrika je enaka:
 \begin{equation}
