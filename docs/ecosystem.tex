@@ -175,42 +175,76 @@ pa izleda tako:\\
 Sistem se za naše vrednosti ($ A, b $ in $ X_{nov} $) obnaša ciklično.
 
 \subsection{Naloga 5}
-Preučili smo obnašanje sistema za različne vrednosti koeficientov in začetnih pogojev in našli
-ciklično, asimptotično ciklično obnašanje in kaos.\\
-Asimptotično ciklično obnašanje smo dobili z naslednjimi začetnimi vrednostmi:\\
+Preučili smo obnašanje sistema za različne vrednosti koeficientov in začetnih pogojev
+in našli ciklično obnašanje, asimptotično ciklično obnašanje in kaos.\\
+\\
+Asimptotično ciklično obnašanje, kjer imamo spiralni lijak, smo dobili z naslednjimi začetnimi vrednostmi:\\
 $ A =
 \begin{bmatrix}
-	0 & 0.0041790 & 0.0014199 & 0 & 0 & 0 \\
-	-0.0010902 & 0 & 0 & 0.0038366 & 0 & 0 \\
-	-0.0019610 & 0 & 0 & 0.0031243 & 0.0038874 & 0 \\
-	0 & -0.0022909 & 0.0029800 & 0 & 0 & 0.0053580 \\
-	0 & 0 & -0.0032865 & 0 & 0 & 0.0059388 \\
-	0 & 0 & 0 & -0.0028531 & -0.0031236 & 0 \\
-\end{bmatrix} $, 
+	0 & 0.37939 & 1.38080 & 0 & 0 & 0 \\
+	-1.10424 & 0 & 0 & 0.65246 & 0 & 0 \\
+	-0.30582 & 0 & 0 & 1.24509 & 0.40233 & 0 \\
+	0 & -0.99713 & -0.73865 & 0 & 0 & 0.39387 \\
+	0 & 0 & -0.35715 & -0 & 0 & 0.39208 \\
+	0 & 0 & 0 & -1.50798 & -1.78165 & 0 \\
+\end{bmatrix} $, \\
 $ b =
 \begin{bmatrix}
-	-0.0824046 \\
-	-0.0059820 \\
-	-0.0192474 \\
-	-0.0311698 \\
-	-0.0448382 \\
-	0.0549130 \\
+	-3.89109 \\
+	-0.27347 \\
+	-3.53131 \\
+	-6.79120 \\
+	-8.91734 \\
+	9.72807 \\
 \end{bmatrix} $ in
 $ X =
 \begin{bmatrix}
-	23.2438 \\
-	17.8982 \\
-	5.2910 \\
-	8.1907 \\
-	10.0353 \\
-	10.4537 \\
+	0.77988 \\
+	1.22798 \\
+	2.48059 \\
+	1.73900 \\
+	3.98827 \\
+	25.00319 \\
 \end{bmatrix} $. \\
-Vektor $ X $ se od stacionarne rešitve sistema razlikuje samo za $ 0.11196 $. Slika simulacije
+Vektor $ X $ se od stacionarne rešitve sistema razlikuje samo za $ 0.00012384 $. Slika simulacije
 sistema s takimi podatki pa je naslednja:
 \begin{center}
-	\includegraphics{asimptotic_cyclic.png}
+	\includegraphics{asimptotic_cyclic_sink.png}
 \end{center}
-
+Asimptotično ciklično obnašanje s spiralnim izvorom pa smo dobili z naslednjimi
+začetnimi vrednostmi:\\
+$ A =
+\begin{bmatrix}
+	0 & 0.000084 & 0.027628 & 0 & 0 & 0 \\
+	-0.011626 & 0 & 0 & 0.032503 & 0 & 0 \\
+	-0.033349 & 0 & 0 & 0.038057 & 0.028158 & 0 \\
+	0 & -0.026921 & -0.033088 & 0 & 0 & 0.028894 \\
+	0 & 0 & -0.008998 & 0 & 0 & 0.009693 \\
+	0 & 0 & 0 & -0.004489 & -0.006963 & 0 \\
+\end{bmatrix} $, \\
+$ b =
+\begin{bmatrix}
+	-0.128572 \\
+	-0.023682 \\
+	-0.291557 \\
+	-0.154676 \\
+	-0.198708 \\
+	0.164787 \\
+\end{bmatrix} $ in
+$ X =
+\begin{bmatrix}
+	14.8432 \\
+	15.1853 \\
+	4.6090 \\
+	6.0374 \\
+	19.7722 \\
+	24.7789 \\
+\end{bmatrix} $. \\
+Vektor $ X $ se od stacionarne rešitve razlikuje za $ 0.0023216 $. Slika simulacije
+sistema izgleda tako:
+\begin{center}
+	\includegraphics{asimptotic_cyclic_source.png}
+\end{center}
 Kaos pa smo dobili z naslednjimi koeficienti:\\
 $ A =
 \begin{bmatrix}

@@ -4,9 +4,9 @@ b3 = -0.009;
 b4 = -0.021;
 b5 = -0.02;
 b6 = 0.145;
-b = [b1; b2; b3; b4; b5; b6];
+#b = [b1; b2; b3; b4; b5; b6];
 ##
-A = zeros(6, 6);
+#A = zeros(6, 6);
 % napisemo raje v matriki ...
 ##A(1, 2) = 0.0061790;
 ##A(1, 3) = 0.0024199;
@@ -33,7 +33,7 @@ A = [
      0,   0,   0, -2, -3, 0;
   ];
 
-A = A .* 0.001;
+#A = A .* 0.001;
 
 % res = generateMatrix(1000, 1, 0.001, 0.05);
 % realVal = [-300; -100; -300; -300; -300; -300];
@@ -46,7 +46,8 @@ A = A .* 0.001;
 ##b = res(:, 7);
 
 [x0, b, A] = generateSystem(10, 2);
-
+A
+b
 x0
 % x0 = -A\b %za iskanje stacionarne resitve
 #simulatePopulation(x0, b, A, 10000);
@@ -54,16 +55,10 @@ x0
 % dodamo se JG(x0), da dobimo matriko B, ki nam bo povedala kaj se dogaja okoli teh tock preko lastnih vrednosti! 
 %x = x0 + randn(6, 1) * min(x0)*0.2;
 
-x = x0 + randn(6, 1)
+for i = 1:10
+  x = x0+rand(6, 1);
+  simulatePopulation(x, b, A, 1000, i);
+endfor
 
-eigenval = eigValuesB(x0, b, A)
-%x = [8; 28; 122; 117; 13; 172];
-% x = [74; 28; 12; 157; 11; 178];
+eigenval = eigValuesB(x0, b, A);
 
-% simulate population and plot it
-simulatePopulation(x, b, A, 1000, 1);
-
-##for i = (2 : 10)
-##  x = x0 + randn(6, 1) * min(x0) * i * 0.1;
-##  simulatePopulation(x, b, A, 10000, i);
-##endfor
