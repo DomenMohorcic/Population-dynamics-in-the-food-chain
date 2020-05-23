@@ -1,4 +1,4 @@
-function [x, b, A] = generateSystem(size)
+function [x, b, A] = generateSystem(coefB, coefA)
   A = zeros(6, 6);
   b = zeros(6, 1);
   mask = [0 1 1 0 0 0;1 0 0 1 0 0;1 0 0 1 1 0;0 1 1 0 0 1;0 0 1 0 0 1;0 0 0 1 1 0];
@@ -7,22 +7,22 @@ function [x, b, A] = generateSystem(size)
     #zgornje trikoten pozitiven del
     for i = 1:6
       for j = i:6
-        A(i, j) = rand/100;
+        A(i, j) = rand * coefA;
       endfor
     endfor
     #spodnje trikoten negativen del
     for i = 1:6
       for j = 1:i
-        A(i, j) = -rand/100;
+        A(i, j) = -rand * coefA;
       endfor
     endfor
     #maska
     A = A.*mask;
     #b
     for i = 1:5
-      b(i) = -rand*size;
+      b(i) = -rand*coefB;
     endfor
-    b(6) = rand*size;
+    b(6) = rand*coefB;
     #preveri ce je resitev ustrezna
     x = A\b;
     s_gt = sum(x <= 0);
