@@ -19,7 +19,7 @@ A(5, 6) = 0.0059388;
 A(2, 1) = -0.0010902;
 A(3, 1) = -0.0019610;
 A(4, 2) = -0.0022909;
-A(4, 3) = 0.0029800;
+A(4, 3) = -0.0029800;
 A(5, 3) = -0.0032865;
 A(6, 4) = -0.0028531;
 A(6, 5) = -0.0031236;
@@ -53,7 +53,7 @@ x0 = -A\b %za iskanje stacionarne resitve
 % daje gibanje bliz ustacionarne tocke ... ciklicno obnasanje
 % dodamo se JG(x0), da dobimo matriko B, ki nam bo povedala kaj se dogaja okoli teh tock preko lastnih vrednosti! 
 %x = x0 + randn(6, 1) * min(x0)*0.2;
-x = x0 + randn(6, 1) * 10;
+x = x0 + randn(6, 1) * 1000;
 
 ev = real(eigValuesB(x0, b, A))
 %x = [8; 28; 122; 117; 13; 172];
