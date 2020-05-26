@@ -28,10 +28,30 @@ function [x, b, A] = generateSystem(coefB, coefA)
     s_gt = sum(x <= 0);
     s_lt = sum(x >= 0);
     if s_gt == 0
-      break;
+      [EValues, EVectors] = eigValuesB(x, b, A);
+      agree = 1;
+      for i = 1:6
+        if real(EValues(i)) >= 0
+          agree = 0;
+          break;
+        endif
+      endfor
+      if agree == 1
+        break;
+      endif
     elseif s_lt == 0
       x = -x;
-      break;
+      [EValues, EVectors] = eigValuesB(x, b, A);
+      agree = 1;
+      for i = 1:6
+        if real(EValues(i)) >= 0
+          agree = 0;
+          break;
+        endif
+      endfor
+      if agree == 1
+        break;
+      endif
     endif
   endwhile
   eigValuesB(x, b, A)

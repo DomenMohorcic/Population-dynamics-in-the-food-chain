@@ -440,17 +440,22 @@ v stacionarni točki. Jakobijeva matrika je enaka:
 \end{equation}
 Lastne vrednosti jacobijeve matrike v stacionarni točki so kompleksne. Imaginarni del skrbi za ciklično obnašanje, od njihovega realnega dela pa
 je odvisno obnašanje sistema. Če je realni del lastne vrednosti negativen, je stacionarna točka
-spiralno privlačna, če je pozitiven, je spiralno odbojna. Če je realni del enak $ 0 $, imamo krožnico.
-Rešitev sistema se da tako napisati z enačbo
+spiralno privlačna, če je pozitiven, je spiralno odbojna. Če je realni del enak $ 0 $, imamo krožnico.\\
+Obnašanje sistema okoli točke, ki ima različno predznačene realne dele lastnih vrednosti, pa je težje opisati. Okoli take točke je več podprostorov,
+v katerih se sistem obnaša različno. Vektorski podprostor je stabilen (spiralno privlačen proti točki), če ima lastna vrednost negativen realni del.
+Tak prostor razpenjajo ustrezni lastni vektorji. Drug vektorski podprostor je nestabilen (spiralno odbija stran od točke), če ima lastna vrednost poziriven
+realni del. Tudi tega razpenjajo pripadajoči lastni vektorji. Vektorski podprostor v okolici stacionarne točke pa je lahko tudi center (sistem kroži), če obstaja
+lastna vrednost brez realnega dela. Ta podprostor pa razpenjajo lastni vektorji, ki pripadajo takim lastnim vrednostim.\\
+Sistem ima tako splošno rešitev, ki je naslednja:
 \begin{equation}
 	x(t) = e^{\alpha t}((C_{1}cos(\beta t)+C_{2}sin(\beta t))u+(-C_{1}sin(\beta t)+C_{2}cos(\beta t))w)
 \end{equation}
 Lastna vrenost Jacobijeve matrike v stacionarni točki takega sistema je oblike $ \lambda_{1,2} = \alpha \pm \beta i $.
 V zgornji enačbi je $ \alpha $ realni del lastne vrednosti in $ \beta $ imaginarni del lastne vrednosti.
-Vektorja $ u $ je realni del lastnega vektorja, $ w $ pa je imaginarni del lastnega vektorja. Ker sta lastni
-vrednosti konjugirani, sta konjugirana tudi njuna lastna vektorja.\\
+Vektor $ u $ je realni del lastnega vektorja, $ w $ pa je imaginarni del lastnega vektorja. Ker sta lastni
+vrednosti konjugirani, sta konjugirana tudi njuna lastna vektorja, zato v enačbi nastopa samo eden.\\
 Ker pa imamo sistem šest spremenljivk, imamo tudi šest lastnih vrednosti ($ \lambda_{1}, \dots, \lambda_{6} $) in šest lastnih vektorjev
-($ v_{1}, \dots, v_{6} $). Ker pa so vse lastne vrednosti in lastni vektorji konjugirani, jih lahko zapišemo tako:
+($ v_{1}, \dots, v_{6} $). Ker pa so med lastnimi vrednostmi in lastnmi vektorji konjugirani pari, ki jih lahko zapišemo tako:
 \begin{align*}
 	&\lambda_{1,2} = \alpha_{1} \pm \beta_{1}i \\
 	&\lambda_{3,4} = \alpha_{3} \pm \beta_{3}i \\
@@ -462,7 +467,7 @@ in
 	&v_{3,4} = u_{3} \pm w_{3}i \\
 	&v_{5,6} = u_{5} \pm w_{5}i \\
 \end{align*}
-kar nam da tri enačbe za rešitev sistema:
+nam da zgornja enačba sistem treh rešitev za naš problem:
 \begin{equation}
 	x_{1}(t) = e^{\alpha_{1} t}((C_{1}cos(\beta_{1} t)+C_{2}sin(\beta_{1} t))u_{1}+(-C_{1}sin(\beta_{1} t)+C_{2}cos(\beta_{1} t))w_{1})
 \end{equation}
@@ -471,6 +476,10 @@ kar nam da tri enačbe za rešitev sistema:
 \end{equation}
 \begin{equation}
 	x_{5}(t) = e^{\alpha_{5} t}((C_{5}cos(\beta_{5} t)+C_{6}sin(\beta_{5} t))u_{5}+(-C_{5}sin(\beta_{5} t)+C_{6}cos(\beta_{5} t))w_{5})
+\end{equation}
+splošna rešitev pa je linearna kombinacija le teh:
+\begin{equation}
+	x(t) = a_{1}x_{1}(t) + a_{3}x_{3}(t) + a_{5}x_{5}(t)
 \end{equation}
 
 \end{document}
