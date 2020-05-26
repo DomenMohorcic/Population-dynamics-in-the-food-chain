@@ -1,4 +1,4 @@
-function EV = eigValuesB(x, b, A)
+function [EValues, EVectors] = eigValuesB(x, b, A)
   % interpretiramo se dogajanje okoli stacionarne tocke z matriko B in njenimi lastnimi vrednostmi
   B = jacobian(x, b, A);
   [V, N] = eig(B);
@@ -8,5 +8,6 @@ function EV = eigValuesB(x, b, A)
     ev(i) = N(i, i);
   end
   
-  EV = ev;
+  EValues = ev';
+  EVectors = V;
 endfunction

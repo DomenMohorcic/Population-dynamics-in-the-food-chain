@@ -17,7 +17,7 @@ function val = jacobian(x, b, A)
     end 
   end
 
-  jacobian = val
+  jacobian = val;
 
 ##  val = zeros(6, 6)
 ##  val = [ 

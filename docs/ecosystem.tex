@@ -369,7 +369,7 @@ v stacionarni točki. Jakobijeva matrika je enaka:
 \begin{equation}
 	J_{x_{1}} =
 	\begin{bmatrix}
-		b_{1}+2x_{1}a_{11}+x_{2}a_{12}+x_{3}a_{13}+x_{4}a_{14}+x_{5}a_{15}+x_{6}a_{16} \\
+		b_{1}+x_{2}a_{12}+x_{3}a_{13}+x_{4}a_{14}+x_{5}a_{15}+x_{6}a_{16} \\
 		x_{2}a_{21} \\
 		x_{3}a_{31} \\
 		x_{4}a_{41} \\
@@ -381,7 +381,7 @@ v stacionarni točki. Jakobijeva matrika je enaka:
 	J_{x_{2}} =
 	\begin{bmatrix}
 		x_{1}a_{12} \\
-		b_{2}+x_{1}a_{21}+2x_{2}a_{22}+x_{3}a_{23}+x_{4}a_{24}+x_{5}a_{25}+x_{6}a_{26} \\
+		b_{2}+x_{1}a_{21}+x_{3}a_{23}+x_{4}a_{24}+x_{5}a_{25}+x_{6}a_{26} \\
 		x_{3}a_{32} \\
 		x_{4}a_{42} \\
 		x_{5}a_{52} \\
@@ -393,7 +393,7 @@ v stacionarni točki. Jakobijeva matrika je enaka:
 	\begin{bmatrix}
 		x_{1}a_{13} \\
 		x_{2}a_{23} \\
-		b_{3}+x_{1}a_{31}+x_{2}a_{32}+2x_{3}a_{33}+x_{4}a_{34}+x_{5}a_{35}+x_{6}a_{36} \\
+		b_{3}+x_{1}a_{31}+x_{2}a_{32}+x_{4}a_{34}+x_{5}a_{35}+x_{6}a_{36} \\
 		x_{4}a_{43} \\
 		x_{5}a_{53} \\
 		x_{6}a_{63} \\
@@ -405,7 +405,7 @@ v stacionarni točki. Jakobijeva matrika je enaka:
 		x_{1}a_{14} \\
 		x_{2}a_{24} \\
 		x_{3}a_{34} \\
-		b_{4}+x_{1}a_{41}+x_{2}a_{42}+x_{3}a_{43}+2x_{4}a_{44}+x_{5}a_{45}+x_{6}a_{46} \\
+		b_{4}+x_{1}a_{41}+x_{2}a_{42}+x_{3}a_{43}+x_{5}a_{45}+x_{6}a_{46} \\
 		x_{5}a_{54} \\
 		x_{6}a_{64} \\
 	\end{bmatrix}
@@ -417,7 +417,7 @@ v stacionarni točki. Jakobijeva matrika je enaka:
 		x_{2}a_{25} \\
 		x_{3}a_{35} \\
 		x_{4}a_{45} \\
-		b_{5}+x_{1}a_{51}+x_{2}a_{52}+x_{3}a_{53}+x_{4}a_{54}+2x_{5}a_{55}+x_{6}a_{56} \\
+		b_{5}+x_{1}a_{51}+x_{2}a_{52}+x_{3}a_{53}+x_{4}a_{54}+x_{6}a_{56} \\
 		x_{6}a_{65} \\
 	\end{bmatrix}
 \end{equation}
@@ -429,7 +429,7 @@ v stacionarni točki. Jakobijeva matrika je enaka:
 		x_{3}a_{36} \\
 		x_{4}a_{46} \\
 		x_{5}a_{56} \\
-		b_{6}+x_{1}a_{61}+x_{2}a_{62}+x_{3}a_{63}+x_{4}a_{64}+x_{5}a_{65}+2x_{6}a_{66} \\
+		b_{6}+x_{1}a_{61}+x_{2}a_{62}+x_{3}a_{63}+x_{4}a_{64}+x_{5}a_{65} \\
 	\end{bmatrix}
 \end{equation}
 \begin{equation}
@@ -439,8 +439,38 @@ v stacionarni točki. Jakobijeva matrika je enaka:
 	\end{bmatrix}
 \end{equation}
 Lastne vrednosti jacobijeve matrike v stacionarni točki so kompleksne. Imaginarni del skrbi za ciklično obnašanje, od njihovega realnega dela pa
-je odvisno obnašanje sistema. Če je realni del manjši od nič, je stacionarna točka
-spiralni lijak, če pa je pozitivna, je spiralni izvor. Če so realni deli enaki nič,
-
+je odvisno obnašanje sistema. Če je realni del lastne vrednosti negativen, je stacionarna točka
+spiralno privlačna, če je pozitiven, je spiralno odbojna. Če je realni del enak $ 0 $, imamo krožnico.
+Rešitev sistema se da tako napisati z enačbo
+\begin{equation}
+	x(t) = e^{\alpha t}((C_{1}cos(\beta t)+C_{2}sin(\beta t))u+(-C_{1}sin(\beta t)+C_{2}cos(\beta t))w)
+\end{equation}
+Lastna vrenost Jacobijeve matrike v stacionarni točki takega sistema je oblike $ \lambda_{1,2} = \alpha \pm \beta i $.
+V zgornji enačbi je $ \alpha $ realni del lastne vrednosti in $ \beta $ imaginarni del lastne vrednosti.
+Vektorja $ u $ je realni del lastnega vektorja, $ w $ pa je imaginarni del lastnega vektorja. Ker sta lastni
+vrednosti konjugirani, sta konjugirana tudi njuna lastna vektorja.\\
+Ker pa imamo sistem šest spremenljivk, imamo tudi šest lastnih vrednosti ($ \lambda_{1}, \dots, \lambda_{6} $) in šest lastnih vektorjev
+($ v_{1}, \dots, v_{6} $). Ker pa so vse lastne vrednosti in lastni vektorji konjugirani, jih lahko zapišemo tako:
+\begin{align*}
+	&\lambda_{1,2} = \alpha_{1} \pm \beta_{1}i \\
+	&\lambda_{3,4} = \alpha_{3} \pm \beta_{3}i \\
+	&\lambda_{5,6} = \alpha_{5} \pm \beta_{5}i \\
+\end{align*}
+in
+\begin{align*}
+	&v_{1,2} = u_{1} \pm w_{1}i \\
+	&v_{3,4} = u_{3} \pm w_{3}i \\
+	&v_{5,6} = u_{5} \pm w_{5}i \\
+\end{align*}
+kar nam da tri enačbe za rešitev sistema:
+\begin{equation}
+	x_{1}(t) = e^{\alpha_{1} t}((C_{1}cos(\beta_{1} t)+C_{2}sin(\beta_{1} t))u_{1}+(-C_{1}sin(\beta_{1} t)+C_{2}cos(\beta_{1} t))w_{1})
+\end{equation}
+\begin{equation}
+	x_{3}(t) = e^{\alpha_{3} t}((C_{3}cos(\beta_{3} t)+C_{4}sin(\beta_{3} t))u_{3}+(-C_{3}sin(\beta_{3} t)+C_{4}cos(\beta_{3} t))w_{3})
+\end{equation}
+\begin{equation}
+	x_{5}(t) = e^{\alpha_{5} t}((C_{5}cos(\beta_{5} t)+C_{6}sin(\beta_{5} t))u_{5}+(-C_{5}sin(\beta_{5} t)+C_{6}cos(\beta_{5} t))w_{5})
+\end{equation}
 
 \end{document}
