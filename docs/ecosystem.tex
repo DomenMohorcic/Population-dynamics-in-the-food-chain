@@ -35,9 +35,9 @@ z naslednjim grafom: \\
 \end{center}
 Puščice označujejo smer prehranjevanja (npr. Plenilec A se prehranjuje z Rastlinojedom A).
 Z $ x_{i} $ označimo velikost posamezne populacije. Sprememba velikosti posamezne populacije
-je tako odvisna od naravnega prirastka/smrtnosti ($ b_{i} $), smrtnosti zaradi ulova in prirastka zaradi
+je tako odvisna od naravnega prirastka/smrtnosti ($ b_{i} $) in smrtnosti zaradi ulova ter prirastka zaradi
 prehranjevanja z drugo vrsto ($ a_{ij} $). Ulov in prehranjevanje sta odvisna od velikosti ustreznih drugih populacij,
-naravni prirastek/smrtnost pa je odvisna samo od velikosti populacije. Dinamiko $ i $-te
+naravni prirastek in smrtnost pa sta odvisna samo od velikosti populacije. Dinamiko $ i $-te
 populacije lahko opišemo tako:
 \begin{equation}
 	\dot x_{i} = x_{i}\cdot b_{i} + \sum_{i \not = j} a_{ij}\cdot x_{i}\cdot x_{j}
@@ -229,6 +229,8 @@ sistema s takimi podatki pa je naslednja:
 	\includegraphics{spiralni_lijak.png}
 \end{center}
 .
+\\
+\\
 \\
 \\
 \\
@@ -442,10 +444,10 @@ Lastne vrednosti jacobijeve matrike v stacionarni točki so kompleksne. Imaginar
 je odvisno obnašanje sistema. Če je realni del lastne vrednosti negativen, je stacionarna točka
 spiralno privlačna, če je pozitiven, je spiralno odbojna. Če je realni del enak $ 0 $, imamo krožnico.\\
 Obnašanje sistema okoli točke, ki ima različno predznačene realne dele lastnih vrednosti, pa je težje opisati. Okoli take točke je več podprostorov,
-v katerih se sistem obnaša različno. Vektorski podprostor je stabilen (spiralno privlačen proti točki), če ima lastna vrednost negativen realni del.
-Tak prostor razpenjajo ustrezni lastni vektorji. Drug vektorski podprostor je nestabilen (spiralno odbija stran od točke), če ima lastna vrednost poziriven
-realni del. Tudi tega razpenjajo pripadajoči lastni vektorji. Vektorski podprostor v okolici stacionarne točke pa je lahko tudi center (sistem kroži), če obstaja
-lastna vrednost brez realnega dela. Ta podprostor pa razpenjajo lastni vektorji, ki pripadajo takim lastnim vrednostim.\\
+v katerih se sistem obnaša različno. Vektorski podprostor je stabilen (spiralno privlačen proti točki), če imajo lastne vrednosti negativen realni del.
+Tak prostor razpenjajo ustrezni lastni vektorji. Drug vektorski podprostor je nestabilen (spiralno odbija stran od točke), če imajo lastne vrednosti poziriven
+realni del. Tudi tega razpenjajo pripadajoči lastni vektorji. Vektorski podprostor v okolici stacionarne točke pa je lahko tudi center (sistem kroži), če obstajajo
+lastne vrednosti brez realnega dela. Ta podprostor pa razpenjajo lastni vektorji, ki pripadajo tem lastnim vrednostim.\\
 Sistem ima tako splošno rešitev, ki je naslednja:
 \begin{equation}
 	x(t) = e^{\alpha t}((C_{1}cos(\beta t)+C_{2}sin(\beta t))u+(-C_{1}sin(\beta t)+C_{2}cos(\beta t))w)
