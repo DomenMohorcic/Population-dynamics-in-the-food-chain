@@ -10,7 +10,7 @@
 \usetikzlibrary{arrows}
 
 \begin{document}
-\title{Population dynamics in a food chain}
+\title{Dinamika populacij v prehranjevalni verigi}
 \author{Domen Mohorčič, Larsen Cundrič, Mustafa Grabus}
 \maketitle
 
@@ -48,7 +48,7 @@ $ a_{ij}\cdot x_{i}\cdot x_{j} $ pa je sprememba $ i $-te populacije glede na in
 \section{Reševanje}
 
 \subsection{Naloga 1}
-Sistem diferencialnih enačb za naš primer je naslednji:
+Sistem diferencialnih enačb za podani sistem je naslednji:
 \begin{align*}
 	&\dot x_{1} = x_{1}\cdot(b_{1}+a_{12}\cdot x_{2}+a_{13}\cdot x_{3}) \\
 	&\dot x_{2} = x_{2}\cdot(b_{2}+a_{21}\cdot x_{1}+a_{24}\cdot x_{4}) \\
@@ -129,16 +129,17 @@ Slika rešitve po 100 iteracijah izgleda tako:\\
 
 \subsection{Naloga 3}
 Napisali smo funcijo {\sf simulatePopulation.m}, ki za vhod vzame matriko interakcij $ A $,
-vektor naravnih prirastkov $ b $ in začetne velikosti populacij v vektorju $ X $.
+vektor naravnih prirastkov $ b $ in začetne velikosti populacij v vektorju $ X $. Funkcija za simulacijo
+uporabi metodo Runge-Kutta četrte stopnje, na koncu pa izriše gibanje sistema.
 \begin{lstlisting}[language=Octave]
-function retval = simulatePopulation (x0, b, A, n, fig)
+function lastX = simulatePopulation (x0, b, A, n, fig)
     F = @(X, b, A) X.*(b+A*X); %enacba prirastka za vsako vrsto
     h = 0.1; %dolzina koraka
 
     tocke = zeros(6, n);
     x = x0;
 
-    %%Simulacija
+    %Simulacija
     for i = (1:n)
         x = x + rk4Step(F, x, h, b, A);
         tocke(:, i) = x;
@@ -151,6 +152,7 @@ function retval = simulatePopulation (x0, b, A, n, fig)
         vektor(1, :) = tocke(i, :);
         plot(vektor);
     endfor
+    hold off;
 
     lastX = x;
 endfunction
@@ -166,7 +168,7 @@ endfunction
 \end{lstlisting}
 
 \subsection{Naloga 4}
-Naredili smo simulacijo za začetne pogoje, ki se malo razlikujejo od $ X $. Dobili smo
+Naredili smo simulacijo za začetne pogoje, ki se malo razlikujejo od $ X $. Določili smo
 $ X_{nov} = \left[9.0, 32.6, 125.9, 121.0, 16.5, 175.4\right]^{T} $, slika simulacije po 5000 iteracijah
 pa izleda tako:\\
 \begin{center}
@@ -177,9 +179,6 @@ Sistem se za naše vrednosti ($ A, b $ in $ X_{nov} $) obnaša ciklično.
 \subsection{Naloga 5}
 Preučili smo obnašanje sistema za različne vrednosti koeficientov in začetnih pogojev
 in našli ciklično obnašanje, asimptotično ciklično obnašanje in kaos.\\
-\\
-\\
-\\
 \\
 \\
 \\
@@ -443,10 +442,10 @@ v stacionarni točki. Jakobijeva matrika je enaka:
 Lastne vrednosti jacobijeve matrike v stacionarni točki so kompleksne. Imaginarni del skrbi za ciklično obnašanje, od njihovega realnega dela pa
 je odvisno obnašanje sistema. Če je realni del lastne vrednosti negativen, je stacionarna točka
 spiralno privlačna, če je pozitiven, je spiralno odbojna. Če je realni del enak $ 0 $, imamo krožnico.\\
-Obnašanje sistema okoli točke, ki ima različno predznačene realne dele lastnih vrednosti, pa je težje opisati. Okoli take točke je več podprostorov,
-v katerih se sistem obnaša različno. Vektorski podprostor je stabilen (spiralno privlačen proti točki), če imajo lastne vrednosti negativen realni del.
-Tak prostor razpenjajo ustrezni lastni vektorji. Drug vektorski podprostor je nestabilen (spiralno odbija stran od točke), če imajo lastne vrednosti poziriven
-realni del. Tudi tega razpenjajo pripadajoči lastni vektorji. Vektorski podprostor v okolici stacionarne točke pa je lahko tudi center (sistem kroži), če obstajajo
+Obnašanje sistema okoli točke, ki ima različno predznačene realne dele lastnih vrednosti, je težje opisati. Okoli take točke je več podprostorov,
+v katerih se sistem obnaša različno. Vektorski podprostor je lahko stabilen (spiralno privlačen proti točki), če imajo lastne vrednosti negativen realni del.
+Tak prostor razpenjajo lastni vektorji takih lastnih vrednosti. Vektorski podprostor je lahko tudi nestabilen (spiralno odbija stran od točke), če imajo lastne vrednosti pozitiven
+realni del. Tega razpenjajo pripadajoči lastni vektorji. Vektorski podprostor v okolici stacionarne točke pa je lahko tudi center (sistem kroži), če obstajajo
 lastne vrednosti brez realnega dela. Ta podprostor pa razpenjajo lastni vektorji, ki pripadajo tem lastnim vrednostim.\\
 Sistem ima tako splošno rešitev, ki je naslednja:
 \begin{equation}
@@ -469,7 +468,7 @@ in
 	&v_{3,4} = u_{3} \pm w_{3}i \\
 	&v_{5,6} = u_{5} \pm w_{5}i \\
 \end{align*}
-nam da zgornja enačba sistem treh rešitev za naš problem:
+Tako nam da zgornja enačba sistem treh generalnih rešitev za naš problem:
 \begin{equation}
 	x_{1}(t) = e^{\alpha_{1} t}((C_{1}cos(\beta_{1} t)+C_{2}sin(\beta_{1} t))u_{1}+(-C_{1}sin(\beta_{1} t)+C_{2}cos(\beta_{1} t))w_{1})
 \end{equation}
@@ -484,4 +483,12 @@ splošna rešitev pa je linearna kombinacija le teh:
 	x(t) = a_{1}x_{1}(t) + a_{3}x_{3}(t) + a_{5}x_{5}(t)
 \end{equation}
 
+\section{Zaključek in komentar}
+
+\section{Viri}
+Z zunanjimi viri smo si pomagali pri klasifikaciji stacionarnih točk:
+\begin{itemize}
+	\item https://math.stackexchange.com/questions/1348606/stability-of-equilibria-for-n-dimensional-nonlinear-systems-of-differential-eq
+	\item https://en.wikipedia.org/wiki/Center\_manifold
+\end{itemize}
 \end{document}
