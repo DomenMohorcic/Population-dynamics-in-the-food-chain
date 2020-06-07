@@ -366,7 +366,55 @@ Vektor $ X $ se od stacionarne rešitve razlikuje za $ 0.025147 $, slika simulac
 \\
 \\
 \\
-Obnašanje sistema pa je odvisno od lastnih vrednosti jakobijeve matrike sistema
+Prikazati pa se da tudi obnašanje različnih vrst v odvisnosti od drugih. Lep primer nam dajo naslednji podatki:\\
+$ A =
+\begin{bmatrix}
+	0 & 0.028139 & 0.033454 & 0 & 0 & 0 \\
+	-0.040769 & 0 & 0 & 0.041175 & 0 & 0 \\
+	-0.009137 & 0 & 0 & 0.023098 & 0.002375 & 0 \\
+	0 & -0.015056 & -0.038015 & 0 & 0 & 0.032484 \\
+	0 & 0 & -0.034298 & 0 & 0 & 0.033258 \\
+	0 & 0 & 0 & -0.000840 & -0.034840 & 0 \\
+\end{bmatrix} $, 
+$ b =
+\begin{bmatrix}
+	-0.194996 \\
+	-0.240748 \\
+	-0.215349 \\
+	-0.197199 \\
+	-0.296217 \\
+	0.090082 \\
+\end{bmatrix} $ in
+$ X =
+\begin{bmatrix}
+	5.43962 \\
+	5.81953 \\
+	0.91894 \\
+	11.24889 \\
+    2.31158 \\
+    9.85802 \\
+\end{bmatrix} $. \\
+Slika sistema je naslednja:
+\begin{center}
+	\includegraphics{special.png}
+\end{center}
+Lepo pa se vidi odvisnost med spremenljivkami $ x_{1}, x_{3} $ in $ x_{6} $:
+\begin{center}
+	\includegraphics{special_136.png}
+	\includegraphics{special_136_2.png}
+\end{center}
+Na slikah se lepo vidi, da sistem pride k stacionarni točki, okoli katere kroži. Sistem se obnaša ciklično.
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+Obnašanje sistema pa je odvisno od lastnih vrednosti Jakobijeve matrike sistema
 v stacionarni točki. Jakobijeva matrika je enaka:
 \begin{equation}
 	J_{x_{1}} =
@@ -489,6 +537,11 @@ Za seminarsko nalogo smo modelirali obnašanje prehranjevalne verige, predstavlj
 Napisali smo sistem diferencialnih enačb za podan prehranjevalni sistem, ga simulirali pri različnih začetnih
 vrednostih in zarličnih koeficientih ter predstavili nekaj različnih obnašanj sistema. Na koncu smo še razložili,
 kako je gibanje sistema v okolici stacionarnih točk povezano z lastnimi vrednostmi jacobijeve matrike v tej točki.\\
+Poskusili smo tudi napisati funkcijo, ki nam vrne želeni sistem. Če želimo sistem, ki se ciklično obnača, bi nam funkcija
+vrnila ustrezne $ A, b $ in $ X $. Dalo bi se nadgraditi funkcijo {\sf generateSystem}, ki bi generirala smo želene sisteme,
+vendar sami nismo uspeli napisati take funkcije. Poskusili smo, da program sproti še preverja lastne vrednosti, a se je zaradi
+naključne generacije sistema funkcija hitro ujela v navidezno neskončno zanko. Najboljša nadgradnja naloge bi bila torej funkcija,
+ki ti generira naključne sisteme z želenim obnašanjem.
 
 \section{Program}
 Napisali smo naslednje funkcije:
@@ -498,9 +551,12 @@ Napisali smo naslednje funkcije:
 		stacionarno rešitev podanega sistema $ X $.
 	\item {\sf jacobian.m}: Funkcija sprejme matriko $ A $ in vektorja $ b $ in $ X $. Vrne Jacobijevo matriko tega sistema.
 	\item {\sf simulatePopulation.m}: Funkcija sprejme matriko $ A $, vektorja $ b $ in $ X $, število iteracij $ n $ in število,
-		kam naj izriše simulacijo sistema. Funkcija vrne zadnji $ X $ po simulaciji.
+		kam naj izriše simulacijo sistema. Funkcija vrne vse $ X $ v simulaciji.
 	\item {\sf eigValuesB.m}: Funkcija sprejme matriko $ A $ in vektorja $ b $ in $ X $. Vrne vektor lastnih vrednosti in matriko
 		lastnih vektorjev za Jacobijevo matriko pri podanih argumentih.
+	\item {\sf plotRelations.m}: Funkcija sprejme simulacijo celotnega sistema (rezultat {\sf simulatePopulation}), koliko vrsti
+		bi radi prikazali, katere vrste so to in kam naj izriše rezultat. Funkcija izriše, kako se vrste obnašajo v odvisnosti ena
+		od druge.
 	\item {\sf main.m}: Funkcija deluje kot glavni program in povezuje vse prej naštete funkcije. Najprej zgenerira naključen sistem z
 		{\sf generateSystem}, nato pa izpiše rezultate $ A, b $ in $ X0 $. Kliče se funkcija {\sf eigValuesB}, ki izpiše lastne vrednosti
 		generiranega sistema. Naredi se spremenljivka $ X $, ki je naključno odmaknjena od $ X0 $. Na koncu se kliče funkcija {\sf simulatePopulation},
