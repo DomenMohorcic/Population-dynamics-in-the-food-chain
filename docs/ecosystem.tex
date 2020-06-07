@@ -14,7 +14,7 @@
 \author{Domen Mohorčič, Larsen Cundrič, Mustafa Grabus}
 \maketitle
 
-\section{Problem}
+\section{Problem} \label{problem}
 Modelirali bomo dinamiko populacij različnih vrst, odnosi med vrstami pa so predstavljeni
 z naslednjim grafom: \\
 \begin{center}
@@ -176,10 +176,11 @@ pa izleda tako:\\
 \end{center}
 Sistem se za naše vrednosti ($ A, b $ in $ X_{nov} $) obnaša ciklično.
 
-\subsection{Naloga 5}
+\subsection{Naloga 5} \label{nal5}
 Preučili smo obnašanje sistema za različne vrednosti koeficientov in začetnih pogojev
-in našli ciklično obnašanje, asimptotično ciklično obnašanje in kaos.\\
-\\
+in našli ciklično obnašanje, asimptotično ciklično obnašanje in kaos. Pri iskanju teh sistemov
+smo si pomagali s funkcijo {\sf generateSystem.m}, ki nam vrne matriko $ A $ in vektor $ b $,
+oba generirana naključno.
 \\
 \\
 \\
@@ -448,7 +449,7 @@ Tak prostor razpenjajo lastni vektorji takih lastnih vrednosti. Vektorski podpro
 realni del. Tega razpenjajo pripadajoči lastni vektorji. Vektorski podprostor v okolici stacionarne točke pa je lahko tudi center (sistem kroži), če obstajajo
 lastne vrednosti brez realnega dela. Ta podprostor pa razpenjajo lastni vektorji, ki pripadajo tem lastnim vrednostim.\\
 Sistem ima tako splošno rešitev, ki je naslednja:
-\begin{equation}
+\begin{equation} \label{eq:13}
 	x(t) = e^{\alpha t}((C_{1}cos(\beta t)+C_{2}sin(\beta t))u+(-C_{1}sin(\beta t)+C_{2}cos(\beta t))w)
 \end{equation}
 Lastna vrenost Jacobijeve matrike v stacionarni točki takega sistema je oblike $ \lambda_{1,2} = \alpha \pm \beta i $.
@@ -468,7 +469,7 @@ in
 	&v_{3,4} = u_{3} \pm w_{3}i \\
 	&v_{5,6} = u_{5} \pm w_{5}i \\
 \end{align*}
-Tako nam da zgornja enačba sistem treh generalnih rešitev za naš problem:
+Tako nam da enačba (\ref{eq:13}) sistem treh generalnih rešitev za naš problem:
 \begin{equation}
 	x_{1}(t) = e^{\alpha_{1} t}((C_{1}cos(\beta_{1} t)+C_{2}sin(\beta_{1} t))u_{1}+(-C_{1}sin(\beta_{1} t)+C_{2}cos(\beta_{1} t))w_{1})
 \end{equation}
@@ -480,10 +481,40 @@ Tako nam da zgornja enačba sistem treh generalnih rešitev za naš problem:
 \end{equation}
 splošna rešitev pa je linearna kombinacija le teh:
 \begin{equation}
-	x(t) = a_{1}x_{1}(t) + a_{3}x_{3}(t) + a_{5}x_{5}(t)
+	x(t) = x_{1}(t) + x_{3}(t) + x_{5}(t)
 \end{equation}
 
 \section{Zaključek in komentar}
+Za seminarsko nalogo smo modelirali obnašanje prehranjevalne verige, predstavljene v poglavju (\ref{problem}).
+Napisali smo sistem diferencialnih enačb za podan prehranjevalni sistem, ga simulirali pri različnih začetnih
+vrednostih in zarličnih koeficientih ter predstavili nekaj različnih obnašanj sistema. Na koncu smo še razložili,
+kako je gibanje sistema v okolici stacionarnih točk povezano z lastnimi vrednostmi jacobijeve matrike v tej točki.\\
+
+\section{Program}
+Napisali smo naslednje funkcije:
+\begin{itemize}
+	\item {\sf generateSystem.m}: Za parametre sprejme dva koeficienta, ki povesta, koliko so velike vrednosti matrike
+		$ A $ in vektorja $ b $. Funkcije vrne matriko koeficientov prehranjevanja $ A $, vektor naravnega prirastka $ b $ in
+		stacionarno rešitev podanega sistema $ X $.
+	\item {\sf jacobian.m}: Funkcija sprejme matriko $ A $ in vektorja $ b $ in $ X $. Vrne Jacobijevo matriko tega sistema.
+	\item {\sf simulatePopulation.m}: Funkcija sprejme matriko $ A $, vektorja $ b $ in $ X $, število iteracij $ n $ in število,
+		kam naj izriše simulacijo sistema. Funkcija vrne zadnji $ X $ po simulaciji.
+	\item {\sf eigValuesB.m}: Funkcija sprejme matriko $ A $ in vektorja $ b $ in $ X $. Vrne vektor lastnih vrednosti in matriko
+		lastnih vektorjev za Jacobijevo matriko pri podanih argumentih.
+	\item {\sf main.m}: Funkcija deluje kot glavni program in povezuje vse prej naštete funkcije. Najprej zgenerira naključen sistem z
+		{\sf generateSystem}, nato pa izpiše rezultate $ A, b $ in $ X0 $. Kliče se funkcija {\sf eigValuesB}, ki izpiše lastne vrednosti
+		generiranega sistema. Naredi se spremenljivka $ X $, ki je naključno odmaknjena od $ X0 $. Na koncu se kliče funkcija {\sf simulatePopulation},
+		ki simulira prej generirani sistem pri novi začetni vrednosti $ X $.
+\end{itemize}
+
+\section{Avtorji}
+Domen Mohorčič je sestavil poročilo, napisal funkcijo {\sf generateSystem.m} za naključno generiranje sistema
+in raziskal klasifikacijo stacionarne točke v večdimenzionalnih sistemih.\\
+Larsen Cundrič je napisal funkcijo {\sf eigValuesB.m}, ki vrne lastne vrednosti in lastne vektorje,
+ter napisal funkcijo {\sf main.m}, ki povezuje vse napisane funkcije.
+Poiskal je tudi različne sisteme, ki so opisani v poglavju \ref{nal5}.\\
+Mustafa Grabus je napisal funkcijo {\sf simulatePopulation.m}, ki simulira sistem za dane podatke.
+Napisal je tudi funkcijo {\sf jacobian.m}, ki vrne vrednost Jacobijeve matrike pri danih podatkih.
 
 \section{Viri}
 Z zunanjimi viri smo si pomagali pri klasifikaciji stacionarnih točk:
@@ -491,4 +522,5 @@ Z zunanjimi viri smo si pomagali pri klasifikaciji stacionarnih točk:
 	\item https://math.stackexchange.com/questions/1348606/stability-of-equilibria-for-n-dimensional-nonlinear-systems-of-differential-eq
 	\item https://en.wikipedia.org/wiki/Center\_manifold
 \end{itemize}
+
 \end{document}
